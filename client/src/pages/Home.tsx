@@ -16,6 +16,11 @@ import Analytics from '../components/Analytics';
 import { useAuth } from '../context/AuthContext';
 // import { login } from '../services/userService';
 
+// Importamos el panel derecho 
+import PanelDerecho from '../components/PanelDerecho';
+
+
+
 function Home() {
   const [currentView, setCurrentView] = useState('home');
   const [isActive, setIsActive] = useState(true); // Estado del usuario
@@ -260,13 +265,8 @@ function Home() {
           </main>
 
           {/* Panel derecho - FIJO */}
-          <aside className="layout-content-container flex flex-col w-64 h-full overflow-hidden">
-            <div className="bg-slate-50 p-4 h-full">
-              <h3 className="text-lg font-semibold text-[#0d141c] mb-4">Panel Derecho</h3>
-              <div className="text-sm text-gray-600">
-                Contenido adicional, widgets, o información complementaria
-              </div>
-            </div>
+          <aside className="hidden md:flex bg-slate-50 border-l border-gray-300 px-4 py-6 overflow-y-auto">
+                <PanelDerecho/>
           </aside>
         </div>
       </div>
